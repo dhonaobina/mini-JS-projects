@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Include the javascript code in the head section -->
+<script src="main.js"></script>
+</head>
+<body>
+<h1>Question</h1>
+<p>Do you agree that JavaScript is a fun language to learn?</p>
+<!-- Create a form with two radio buttons for agree and disagree -->
+<form>
+  <input type="radio" id="agree" name="answer" value="agree">
+  <label for="agree">Agree</label><br>
+  <input type="radio" id="disagree" name="answer" value="disagree">
+  <label for="disagree">Disagree</label><br>
+  <!-- Create a button to submit the answer and call the function -->
+  <input type="button" onclick="checkAnswer()" value="Submit">
+</form>
+<!-- Create a message element to display the result -->
+<p id="message"></p>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<html>
+<head>
+    <title>ComputeGrade</title>
+    <link rel="stylesheet" href="styles\styles.css">
+</head>
+<script>
+function resultDisplay()
+    {
+        var stuName = document.getElementById("stuName").value;
+        var result = parseInt(document.getElementById("Math").value)
+        + parseInt(document.getElementById("English").value)
+        + parseInt(document.getElementById("Computer").value)
+        + parseInt(document.getElementById("Science").value);
+        if (!result)
+        {    
+            document.getElementById('txtout').innerHTML = "Please enter marks for all subjects.";
+            document.getElementById('txtout').style.backgroundColor = "#ffd9b3";
+            return;  
+        }
+        else
+        {
+            document.getElementById('txtout').innerHTML = stuName + " has scored " + result + " marks out of 400.";
+            document.getElementById('txtout').style.backgroundColor = "#ffd9b3";
+            var marks = document.getElementsByTagName("input");
+            var sub = document.getElementsByClassName("grade");
+            for (var i in marks)
+            {
+                if(marks[i].value < 0 || marks[i].value > 100)
+                {
+                  
+                    document.getElementById('txtout').innerHTML = 'Please enter marks between 0 and 100 for all subjects.';
+                    document.getElementById('txtout').style.backgroundColor = "#ffd9b3";
+                    continue;
+                }
+                else if(marks[i].value >= 80 && marks[i].value <= 100)
+                {
+                    sub[i].innerHTML = 'Grade A';
+                    sub[i].style.backgroundColor = "#99ff99";
+                }
+                else if (marks[i].value >= 60 && marks[i].value <80)
+                {
+                    sub[i].innerHTML = 'Grade B';
+                    sub[i].style.backgroundColor = "#ffff80";
+                }
+                else if (marks[i].value >= 40 && marks[i].value < 60)
+                {
+                    sub[i].innerHTML = 'Grade C';
+                    sub[i].style.backgroundColor = "#b3ffff";
+                }
+                else
+                {
+                    sub[i].innerHTML = 'Fail';
+                    sub[i].style.backgroundColor = "#ffb3b3";
+                }
+            }
+        }
+    }
+     
+</script>
+<body>
+    <br>
+    <br>
+    <h2>
+        Compute Grade</h2>
+    <div class="main-div">
+        <table>
+            <tr>
+                <td>
+                    Student Name
+                </td>
+                <td>
+                    <select style="font-size: 16px;" style="width: 172px;" id="stuName">
+                        <option value="David" width="">David</option>
+                        <option value="John">John</option>
+                        <option value="Michelle">Michelle</option>
+                        <option value="Laura">Laura</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Subjects
+                </td>
+                <tr>
+                <td>
+                    <label class="subcaption">
+                        Math</label>
+                </td>
+                <td>
+                    <input type="text" name="Math" id="Math" >
+                </td>
+                <td>
+                    <p class = "grade">
+                        </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="subcaption">
+                        English</label>
+                </td>
+                <td>
+                    <input type="text" name="Eng" id="English" >
+                </td>
+                <td>
+                    <p class = "grade">
+                        </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="subcaption">
+                        Computer</label>
+                </td>
+                <td>
+                    <input type="text" name="Computer" id="Computer" >
+                </td>
+                <td>
+                    <p class = "grade">
+                        </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="subcaption">
+                        Science</label>
+                </td>
+                <td>
+                    <input type="text" name="Science" id="Science" >
+                </td>
+                <td>
+                    <p class = "grade">
+                        </p>
+                </td>
+            </tr>
+        </tr>
+        </table>
+        <br>
+        <button class="button button2" type="button" onclick="resultDisplay()">
+            Compute Grades</button>
+        <br>
+        <p id="txtout"></p>
+    </div>
+</body>
+</html>

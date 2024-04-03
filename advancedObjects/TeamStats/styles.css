@@ -1,0 +1,21 @@
+#team 
+{
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1 
+{
+    color: blue;
+}
+
+table, th, td 
+{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th, td 
+{
+    padding: 10px;
+}
